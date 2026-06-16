@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SkillsNow Computer Institute at NextInova Solutions offers top IT courses in Lahore: Basic IT, Meta Ads, Web Development, Python, AI, Freelancing, Google Ads, SEO, WordPress, Graphic Design — online & physical classes." />
+  <meta name="keywords" content="IT courses Lahore, Meta Ads course Pakistan, web development course Lahore, Python course, AI course, freelancing course Pakistan, Google Ads training, SEO course Lahore, WordPress course, graphic design course, SkillsNow Computer Institute, NextInova Solutions" />
+  <meta name="author" content="NEXTINOVA SOLUTIONS" />
+  <title>Courses Offered | SkillsNow Computer Institute – NextInova Solutions</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --navy-deep: #0A1628;
+      --navy-mid: #1E3A5F;
+      --navy-light: #2C5282;
+      --blue-sky: #0EA5E9;
+      --blue-light: #38BDF8;
+      --blue-ice: #E0F2FE;
+      --blue-pale: #F0F9FF;
+      --accent: #00D4FF;
+      --text-dark: #0A1628;
+      --text-muted: #64748B;
+      --border: rgba(14,165,233,0.2);
+      --shadow-blue: 0 4px 30px rgba(14,165,233,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-dark); overflow-x: hidden; background: var(--white); }
+
+    /* SCROLL ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* NAVBAR */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(10,22,40,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(14,165,233,0.2);
+      padding: 0 5%; height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,212,255,0.15); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #0EA5E9, #00D4FF);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 16px; color: white;
+      letter-spacing: -1px; box-shadow: 0 0 20px rgba(0,212,255,0.4); flex-shrink: 0;
+    }
+    .logo-text { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 15px; color: white; letter-spacing: 1px; line-height: 1.2; }
+    .logo-text span { color: var(--accent); }
+    .nav-links { display: flex; list-style: none; gap: 10px; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; font-weight: 500;
+      padding: 8px 16px; border-radius: 6px; transition: all 0.3s; letter-spacing: 0.3px;
+    }
+    .nav-links a:hover { color: var(--accent); background: rgba(14,165,233,0.1); }
+    .nav-cta {
+      background: linear-gradient(135deg, #0EA5E9, #0284C7) !important;
+      color: white !important; padding: 9px 20px !important; border-radius: 8px !important;
+      font-weight: 600 !important; box-shadow: 0 4px 15px rgba(14,165,233,0.35);
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(14,165,233,0.5) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s; display: block; }
+
+    /* PAGE HERO */
+    #page-hero {
+      min-height: 44vh; background: var(--navy-deep);
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      padding: 120px 5% 70px; position: relative; overflow: hidden;
+    }
+    #page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(14,165,233,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridPulse 8s ease-in-out infinite;
+    }
+    @keyframes gridPulse { 0%,100% { opacity:0.5; } 50% { opacity:1; } }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.12; pointer-events: none; }
+    .orb-1 { width: 400px; height: 400px; background: #0EA5E9; top: -80px; left: -80px; }
+    .orb-2 { width: 350px; height: 350px; background: #00D4FF; bottom: -60px; right: -60px; }
+
+    .page-hero-content { position: relative; z-index: 2; }
+    .institute-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(14,165,233,0.12); border: 1px solid rgba(14,165,233,0.3);
+      color: var(--blue-light); font-size: 13px; font-weight: 600;
+      padding: 8px 22px; border-radius: 50px; margin-bottom: 20px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      animation: fadeInDown 0.8s ease 0.2s both;
+    }
+    .institute-label::before { content: ''; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(1.5); } }
+    @keyframes fadeInDown { from { opacity:0; transform:translateY(-25px); } to { opacity:1; transform:translateY(0); } }
+
+    .page-hero-title {
+      font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 900; color: white; line-height: 1.1; letter-spacing: 2px;
+      animation: fadeInDown 0.9s ease 0.4s both;
+      text-shadow: 0 0 60px rgba(0,212,255,0.25);
+    }
+    .page-hero-title .highlight {
+      background: linear-gradient(135deg, #0EA5E9, #00D4FF, #38BDF8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.65);
+      margin-top: 16px; font-weight: 300; letter-spacing: 0.5px;
+      animation: fadeInDown 1s ease 0.6s both;
+    }
+    .page-hero-tags {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;
+      animation: fadeInDown 1s ease 0.8s both;
+    }
+    .tag {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(14,165,233,0.25);
+      color: rgba(255,255,255,0.7); font-size: 12px; padding: 5px 14px; border-radius: 20px;
+    }
+
+    /* COURSES SECTION COMMON */
+    .course-section {
+      padding: 90px 5%;
+      position: relative; overflow: hidden;
+    }
+    .course-section:nth-child(odd) { background: var(--white); }
+    .course-section:nth-child(even) { background: var(--blue-pale); }
+    .course-section.dark-section { background: var(--navy-deep) !important; }
+
+    .course-inner {
+      max-width: 1180px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 70px; align-items: center;
+    }
+    .course-inner.reverse { direction: rtl; }
+    .course-inner.reverse > * { direction: ltr; }
+
+    .course-number {
+      font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase; color: var(--blue-sky);
+      margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+    }
+    .course-number::after { content: ''; flex: 1; height: 1px; background: rgba(14,165,233,0.25); max-width: 60px; }
+
+    .course-heading {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700; line-height: 1.2; margin-bottom: 10px;
+    }
+    .course-heading.light { color: white; }
+    .course-heading.dark-text { color: var(--navy-deep); }
+
+    .course-divider {
+      width: 50px; height: 3px;
+      background: linear-gradient(90deg, #0EA5E9, #00D4FF);
+      border-radius: 2px; margin-bottom: 18px;
+    }
+
+    .course-mode-badges { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+    .badge {
+      font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+      padding: 4px 12px; border-radius: 20px;
+    }
+    .badge-online { background: rgba(16,185,129,0.12); color: #059669; border: 1px solid rgba(16,185,129,0.3); }
+    .badge-physical { background: rgba(14,165,233,0.12); color: #0284C7; border: 1px solid rgba(14,165,233,0.3); }
+    .badge-lahore { background: rgba(139,92,246,0.1); color: #7C3AED; border: 1px solid rgba(139,92,246,0.25); }
+
+    .course-desc {
+      font-size: 15px; line-height: 1.85; margin-bottom: 26px;
+    }
+    .course-desc.muted { color: var(--text-muted); }
+    .course-desc.light-muted { color: rgba(255,255,255,0.65); }
+
+    .course-highlights {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px;
+    }
+    .highlight-pill {
+      font-size: 12px; font-weight: 500; padding: 5px 13px; border-radius: 6px;
+      background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.2);
+      color: var(--blue-sky);
+    }
+    .highlight-pill.light { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.75); }
+
+    .course-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn-enroll {
+      background: linear-gradient(135deg, #0EA5E9, #0284C7); color: white;
+      padding: 13px 28px; border-radius: 10px; font-size: 14px; font-weight: 600;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.3s; box-shadow: 0 4px 18px rgba(14,165,233,0.35); border: none; cursor: pointer;
+    }
+    .btn-enroll:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(14,165,233,0.5); }
+
+    .btn-whatsapp {
+      background: #25D366; color: white;
+      padding: 13px 28px; border-radius: 10px; font-size: 14px; font-weight: 600;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: all 0.3s; box-shadow: 0 4px 18px rgba(37,211,102,0.3); border: none; cursor: pointer;
+    }
+    .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,0.45); background: #1ebe5d; }
+
+    /* COURSE IMAGE */
+    .course-img-wrap {
+      position: relative; border-radius: 20px; overflow: hidden;
+    }
+    .course-img-wrap img {
+      width: 100%; height: 380px; object-fit: cover;
+      border-radius: 20px; display: block;
+      box-shadow: 0 20px 60px rgba(14,165,233,0.18);
+      transition: transform 0.5s ease;
+    }
+    .course-img-wrap:hover img { transform: scale(1.03); }
+    .course-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(10,22,40,0.2), transparent);
+      border-radius: 20px; pointer-events: none;
+    }
+    .course-img-badge {
+      position: absolute; bottom: 20px; left: 20px;
+      background: rgba(10,22,40,0.85); backdrop-filter: blur(10px);
+      border: 1px solid rgba(14,165,233,0.3); border-radius: 12px;
+      padding: 12px 16px; color: white;
+    }
+    .course-img-badge .badge-icon { font-size: 22px; margin-bottom: 4px; }
+    .course-img-badge .badge-title { font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; color: var(--accent); }
+    .course-img-badge .badge-sub { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+    /* SECTION SEPARATORS */
+    .wave-divider { line-height: 0; background: var(--navy-deep); }
+    .wave-divider svg { display: block; }
+
+    /* BOTTOM CTA STRIP */
+    #cta-strip {
+      background: var(--navy-deep); padding: 80px 5%; text-align: center; position: relative; overflow: hidden;
+    }
+    #cta-strip::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(14,165,233,0.1) 0%, transparent 70%);
+    }
+    .cta-title { font-family: 'Orbitron', sans-serif; font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; color: white; margin-bottom: 14px; position: relative; z-index: 1; }
+    .cta-sub { color: rgba(255,255,255,0.6); font-size: 15px; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; z-index: 1; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+    .btn-outline-white {
+      background: transparent; color: white; border: 1.5px solid rgba(14,165,233,0.5);
+      padding: 14px 32px; border-radius: 10px; font-size: 14px; font-weight: 600;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s;
+    }
+    .btn-outline-white:hover { border-color: var(--blue-sky); background: rgba(14,165,233,0.1); transform: translateY(-3px); }
+
+    /* FOOTER */
+    footer { background: #060d1a; padding: 36px 5%; text-align: center; border-top: 1px solid rgba(14,165,233,0.15); }
+    footer p { font-size: 13px; color: rgba(255,255,255,0.35); }
+    footer a { color: var(--blue-light); text-decoration: none; }
+
+    /* STICKY FLOATING WHATSAPP */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+      background: #25D366; color: white; width: 60px; height: 60px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; text-decoration: none; box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      transition: all 0.3s; animation: waFloat 3s ease-in-out infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.6); }
+    @keyframes waFloat { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.7); } }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .course-inner { grid-template-columns: 1fr; gap: 36px; }
+      .course-inner.reverse { direction: ltr; }
+      .course-img-wrap img { height: 260px; }
+      .nav-links { display: none; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: rgba(10,22,40,0.98); padding: 20px; gap: 8px; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 500px) {
+      .course-section { padding: 60px 4%; }
+      .course-btns { flex-direction: column; }
+      .btn-enroll, .btn-whatsapp { text-align: center; justify-content: center; }
+    }
+
+    /* dark section overrides */
+    .dark-section .course-number { color: var(--blue-light); }
+    .dark-section .course-number::after { background: rgba(14,165,233,0.2); }
+    .dark-section .highlight-pill { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.75); }
+    .dark-section .course-img-wrap img { box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-icon">NI</div>
+    <div class="logo-text">Next<span>Inova</span></div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="courses.html" style="color:var(--accent)">Courses</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+    <li><a href="https://wa.me/923249375759" class="nav-cta" target="_blank">📲 Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="page-hero-content">
+    <div class="institute-label">SkillsNow Computer Institute</div>
+    <h1 class="page-hero-title">
+      Courses Offered by<br><span class="highlight">SkillsNow</span> Computer Institute
+    </h1>
+    <p class="page-hero-sub">
+      Industry-ready IT courses in Lahore — available online &amp; in-person
+    </p>
+    <div class="page-hero-tags">
+      <span class="tag">📍 Lahore, Pakistan</span>
+      <span class="tag">🌐 Online Available</span>
+      <span class="tag">🎓 Certificate on Completion</span>
+      <span class="tag">💼 Internship Opportunities</span>
+      <span class="tag">🕐 Morning &amp; Evening Batches</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 1: BASIC IT -->
+<section class="course-section" id="basic-it">
+  <div class="course-inner reveal">
+    <div class="course-content">
+      <div class="course-number">Course 01</div>
+      <h2 class="course-heading dark-text">Basic IT Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc muted">
+        Master essential computer skills with our beginner-friendly Basic IT Course in Lahore. Learn MS Word, Excel, PowerPoint, internet browsing, email management, and basic computer operations. Perfect for students, job seekers, and professionals looking to enhance their digital literacy. This practical IT training in Pakistan covers real-world office tasks, boosting your employability and confidence in the digital workplace.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill">MS Word & Excel</span>
+        <span class="highlight-pill">PowerPoint</span>
+        <span class="highlight-pill">Internet & Email</span>
+        <span class="highlight-pill">Office Skills</span>
+        <span class="highlight-pill">Typing Speed</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20Basic%20IT%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Basic%20IT%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-right">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80" alt="Basic IT Course – Computer skills training Lahore" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">💻</div>
+        <div class="badge-title">Basic IT</div>
+        <div class="badge-sub">Foundation Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 2: META ADS -->
+<section class="course-section dark-section" id="meta-ads">
+  <div class="course-inner reverse reveal">
+    <div class="course-content">
+      <div class="course-number">Course 02</div>
+      <h2 class="course-heading light">Meta Ads Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc light-muted">
+        Become a certified Meta Ads specialist with our advanced Facebook and Instagram advertising course in Lahore. Learn audience targeting, ad campaign creation, A/B testing, retargeting, conversion tracking, and budget optimization. This digital marketing course in Pakistan is designed for freelancers, business owners, and marketing professionals who want to generate leads, drive sales, and build profitable ad campaigns on Meta platforms.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill light">Facebook Ads</span>
+        <span class="highlight-pill light">Instagram Ads</span>
+        <span class="highlight-pill light">Audience Targeting</span>
+        <span class="highlight-pill light">Pixel Setup</span>
+        <span class="highlight-pill light">Campaign Optimization</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20Meta%20Ads%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Meta%20Ads%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-left">
+      <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=700&q=80" alt="Meta Ads Course – Facebook Instagram advertising training Lahore" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">📱</div>
+        <div class="badge-title">Meta Ads</div>
+        <div class="badge-sub">Marketing Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 3: WEB DEVELOPMENT -->
+<section class="course-section" id="web-development">
+  <div class="course-inner reveal">
+    <div class="course-content">
+      <div class="course-number">Course 03</div>
+      <h2 class="course-heading dark-text">Web Development Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc muted">
+        Build professional, responsive websites from scratch with our comprehensive Web Development course in Lahore. Learn HTML5, CSS3, and JavaScript step-by-step — from static pages to dynamic, interactive sites. This web design and development training in Pakistan also covers freelancing strategies, helping you earn on Fiverr and Upwork. Perfect for beginners and intermediate learners aiming for a tech career or freelance income online.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill">HTML5</span>
+        <span class="highlight-pill">CSS3</span>
+        <span class="highlight-pill">JavaScript</span>
+        <span class="highlight-pill">Responsive Design</span>
+        <span class="highlight-pill">Freelancing Tips</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20Web%20Development%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Web%20Development%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-right">
+      <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=700&q=80" alt="Web Development Course HTML CSS JavaScript Lahore Pakistan" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">🌐</div>
+        <div class="badge-title">Web Dev</div>
+        <div class="badge-sub">Tech Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 4: PYTHON -->
+<section class="course-section dark-section" id="python">
+  <div class="course-inner reverse reveal">
+    <div class="course-content">
+      <div class="course-number">Course 04</div>
+      <h2 class="course-heading light">Python Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc light-muted">
+        Launch your programming career with our beginner-to-advanced Python course in Lahore. Python is the world's most in-demand programming language used in data science, automation, artificial intelligence, and web development. This Python programming course in Pakistan covers syntax, functions, OOP, file handling, libraries like NumPy and Pandas, and real-world mini-projects to make you job-ready and freelance-ready fast.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill light">Python Basics</span>
+        <span class="highlight-pill light">OOP</span>
+        <span class="highlight-pill light">Automation</span>
+        <span class="highlight-pill light">NumPy & Pandas</span>
+        <span class="highlight-pill light">Mini Projects</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20Python%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Python%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-left">
+      <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=700&q=80" alt="Python programming course Lahore Pakistan – data science automation" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">🐍</div>
+        <div class="badge-title">Python</div>
+        <div class="badge-sub">Programming Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 5: MASTER IN AI -->
+<section class="course-section" id="master-ai">
+  <div class="course-inner reveal">
+    <div class="course-content">
+      <div class="course-number">Course 05</div>
+      <h2 class="course-heading dark-text">Master in AI</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc muted">
+        Stay ahead of the future with our Master in Artificial Intelligence course in Lahore. This AI training in Pakistan covers machine learning fundamentals, deep learning, neural networks, ChatGPT tools, prompt engineering, and AI-powered automation. Ideal for professionals, developers, and entrepreneurs, this course equips you to build AI-driven products, automate business processes, and unlock high-paying opportunities in the rapidly growing AI industry.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill">Machine Learning</span>
+        <span class="highlight-pill">Deep Learning</span>
+        <span class="highlight-pill">ChatGPT & LLMs</span>
+        <span class="highlight-pill">Prompt Engineering</span>
+        <span class="highlight-pill">AI Automation</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20Master%20in%20AI%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Master%20in%20AI%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-right">
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad979?w=700&q=80" alt="Master in AI course Lahore – artificial intelligence machine learning Pakistan" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">🤖</div>
+        <div class="badge-title">Master AI</div>
+        <div class="badge-sub">Advanced Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 6: FREELANCING -->
+<section class="course-section dark-section" id="freelancing">
+  <div class="course-inner reverse reveal">
+    <div class="course-content">
+      <div class="course-number">Course 06</div>
+      <h2 class="course-heading light">Freelancing Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc light-muted">
+        Turn your skills into income with our practical Freelancing course in Lahore. This comprehensive freelancing training in Pakistan covers account creation on Fiverr, Upwork, and Freelancer.com, creating winning gig profiles, proposal writing, client communication, pricing strategies, and order delivery. Learn how to earn in dollars from Pakistan with expert mentorship, live sessions, and real client acquisition strategies used by top-earning Pakistani freelancers.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill light">Fiverr & Upwork</span>
+        <span class="highlight-pill light">Gig Optimization</span>
+        <span class="highlight-pill light">Client Communication</span>
+        <span class="highlight-pill light">Proposal Writing</span>
+        <span class="highlight-pill light">Earn in USD</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20Freelancing%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Freelancing%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-left">
+      <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=700&q=80" alt="Freelancing course Lahore – Fiverr Upwork training Pakistan" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">💰</div>
+        <div class="badge-title">Freelancing</div>
+        <div class="badge-sub">Income Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 7: GOOGLE ADS -->
+<section class="course-section" id="google-ads">
+  <div class="course-inner reveal">
+    <div class="course-content">
+      <div class="course-number">Course 07</div>
+      <h2 class="course-heading dark-text">Google Ads Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc muted">
+        Master Google Ads and pay-per-click (PPC) advertising with our expert-led Google Ads course in Lahore. This Google advertising training in Pakistan covers Search Ads, Display Ads, Shopping Ads, YouTube Ads, keyword research, bidding strategies, Quality Score optimization, and Google Analytics integration. Perfect for digital marketers, business owners, and freelancers who want to run profitable Google ad campaigns and generate measurable ROI for clients.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill">Search Ads</span>
+        <span class="highlight-pill">Display & YouTube Ads</span>
+        <span class="highlight-pill">Keyword Research</span>
+        <span class="highlight-pill">PPC Strategy</span>
+        <span class="highlight-pill">Google Analytics</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20Google%20Ads%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Google%20Ads%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-right">
+      <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=700&q=80" alt="Google Ads course Lahore – PPC digital marketing training Pakistan" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">🎯</div>
+        <div class="badge-title">Google Ads</div>
+        <div class="badge-sub">PPC Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 8: SEO -->
+<section class="course-section dark-section" id="seo">
+  <div class="course-inner reverse reveal">
+    <div class="course-content">
+      <div class="course-number">Course 08</div>
+      <h2 class="course-heading light">SEO Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc light-muted">
+        Rank websites on Google's first page with our comprehensive SEO course in Lahore. This Search Engine Optimization training in Pakistan covers on-page SEO, off-page SEO, technical SEO, keyword research, competitor analysis, link building, Google Search Console, and local SEO strategies. Whether you're a blogger, business owner, or freelancer, this SEO training helps you drive organic traffic, increase visibility, and build a strong passive income online.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill light">On-Page SEO</span>
+        <span class="highlight-pill light">Off-Page & Link Building</span>
+        <span class="highlight-pill light">Technical SEO</span>
+        <span class="highlight-pill light">Keyword Research</span>
+        <span class="highlight-pill light">Google Search Console</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20SEO%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20SEO%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-left">
+      <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=700&q=80" alt="SEO course Lahore – search engine optimization training Pakistan" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">📈</div>
+        <div class="badge-title">SEO</div>
+        <div class="badge-sub">Ranking Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 9: WORDPRESS -->
+<section class="course-section" id="wordpress">
+  <div class="course-inner reveal">
+    <div class="course-content">
+      <div class="course-number">Course 09</div>
+      <h2 class="course-heading dark-text">WordPress Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc muted">
+        Build stunning professional websites without coding using our WordPress course in Lahore. This WordPress web development training in Pakistan covers WordPress installation, theme customization, Elementor page builder, WooCommerce e-commerce setup, plugins, SEO configuration, and website speed optimization. Whether you want to launch your own website or offer WordPress development as a freelancing service, this course gives you the complete toolkit to succeed.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill">WordPress Setup</span>
+        <span class="highlight-pill">Elementor Builder</span>
+        <span class="highlight-pill">WooCommerce</span>
+        <span class="highlight-pill">Plugins & Themes</span>
+        <span class="highlight-pill">Website SEO</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20WordPress%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20WordPress%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-right">
+      <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80" alt="WordPress course Lahore – website building training Pakistan" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">🖥️</div>
+        <div class="badge-title">WordPress</div>
+        <div class="badge-sub">Builder Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE 10: GRAPHIC DESIGN -->
+<section class="course-section dark-section" id="graphic-design">
+  <div class="course-inner reverse reveal">
+    <div class="course-content">
+      <div class="course-number">Course 10</div>
+      <h2 class="course-heading light">Graphic Design Course</h2>
+      <div class="course-divider"></div>
+      <div class="course-mode-badges">
+        <span class="badge badge-online">🌐 Online</span>
+        <span class="badge badge-physical">🏫 Physical</span>
+        <span class="badge badge-lahore">📍 Lahore</span>
+      </div>
+      <p class="course-desc light-muted">
+        Unleash your creativity with our professional Graphic Design course in Lahore. This design training in Pakistan covers Adobe Photoshop, Illustrator, Canva, logo design, brand identity, social media graphics, poster design, UI mockups, and print design. Ideal for aspiring designers, marketers, and freelancers wanting to build a strong design portfolio. Learn industry-standard tools and land graphic design clients on Fiverr, Upwork, and local markets in Pakistan.
+      </p>
+      <div class="course-highlights">
+        <span class="highlight-pill light">Adobe Photoshop</span>
+        <span class="highlight-pill light">Adobe Illustrator</span>
+        <span class="highlight-pill light">Canva Pro</span>
+        <span class="highlight-pill light">Logo & Branding</span>
+        <span class="highlight-pill light">Social Media Design</span>
+      </div>
+      <div class="course-btns">
+        <a href="https://wa.me/923249375759?text=I%20want%20to%20Enroll%20in%20Graphic%20Design%20Course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+        <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Graphic%20Design%20Course" class="btn-whatsapp" target="_blank">💬 Contact on WhatsApp</a>
+      </div>
+    </div>
+    <div class="course-img-wrap reveal-left">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80" alt="Graphic Design course Lahore – Photoshop Illustrator training Pakistan" loading="lazy" />
+      <div class="course-img-overlay"></div>
+      <div class="course-img-badge">
+        <div class="badge-icon">🎨</div>
+        <div class="badge-title">Graphic Design</div>
+        <div class="badge-sub">Creative Level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BOTTOM CTA -->
+<section id="cta-strip">
+  <h2 class="cta-title reveal">Ready to Start Your <span style="background:linear-gradient(135deg,#0EA5E9,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Digital Career?</span></h2>
+  <p class="cta-sub reveal">Join 100+ students who transformed their futures at SkillsNow Computer Institute. Morning &amp; evening batches available in Lahore — online classes accessible from anywhere in Pakistan.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20enroll%20in%20a%20course" class="btn-enroll" target="_blank">📚 Enroll Now</a>
+    <a href="https://wa.me/923249375759" class="btn-whatsapp" target="_blank">💬 WhatsApp Us</a>
+    <a href="index.html" class="btn-outline-white">← Back to Home</a>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer id="footer">
+  <p>© 2025 NEXTINOVA SOLUTIONS – SkillsNow Computer Institute. All rights reserved. | Multani Colony, Shalimar Bagh Road, Lahore, Pakistan</p>
+  <p style="margin-top:8px"><a href="index.html">Home</a> · <a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/923249375759?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20courses" class="wa-float" target="_blank" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+  💬
+</a>
+
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
