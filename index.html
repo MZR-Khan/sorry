@@ -1,313 +1,1625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Romantic Proposal Prank 💖</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { touch-action: manipulation; }
-        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        @media (max-width: 768px) { .custom-cursor { display: none !important; } }
-        .luxury-glow { text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 40px rgba(255, 105, 180, 0.6); }
-        .gradient-bg {
-            background: linear-gradient(135deg, #0c0c0c 0%, #1a0033 25%, #2d0033 50%, #660033 75%, #cc0066 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            min-height: 100vh;
-        }
-        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .glass-card { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-        .hearts-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-        .text-hero-mobile { font-size: clamp(2rem, 8vw, 4rem) !important; }
-        .text-sub-mobile { font-size: clamp(1.25rem, 5vw, 2rem) !important; }
-        .btn-mobile { font-size: clamp(1.1rem, 4vw, 1.5rem) !important; padding: 1rem 2rem !important; min-height: 60px; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
-        .animate-float { animation: float 4s ease-in-out infinite; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NEXTINOVA SOLUTIONS – Innovating the future, solving today. Expert IT courses, web development, and digital marketing services." />
+  <meta name="keywords" content="IT courses, web development, digital marketing, Meta ads, remote work, Lahore, Pakistan" />
+  <meta name="author" content="NEXTINOVA SOLUTIONS" />
+  <title>NEXTINOVA SOLUTIONS | Innovating the Future</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --navy-deep: #0A1628;
+      --navy-mid: #1E3A5F;
+      --navy-light: #2C5282;
+      --blue-sky: #0EA5E9;
+      --blue-light: #38BDF8;
+      --blue-ice: #E0F2FE;
+      --blue-pale: #F0F9FF;
+      --accent: #00D4FF;
+      --text-dark: #0A1628;
+      --text-muted: #64748B;
+      --border: rgba(14,165,233,0.2);
+      --shadow-blue: 0 4px 30px rgba(14,165,233,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      background: var(--white);
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10,22,40,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(14,165,233,0.2);
+      padding: 0 5%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,212,255,0.15); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #0EA5E9, #00D4FF);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      color: white;
+      letter-spacing: -1px;
+      box-shadow: 0 0 20px rgba(0,212,255,0.4);
+      flex-shrink: 0;
+    }
+    .logo-text {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: white;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+    .logo-text span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.3s;
+      letter-spacing: 0.3px;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+      background: rgba(14,165,233,0.1);
+    }
+    .nav-links a.active {
+      color: var(--accent);
+      background: rgba(14,165,233,0.12);
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, #0EA5E9, #0284C7) !important;
+      color: white !important;
+      padding: 9px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 15px rgba(14,165,233,0.35);
+      transition: all 0.3s !important;
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(14,165,233,0.5) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 5px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      width: 24px; height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s;
+      display: block;
+    }
+
+    /* ─── HERO (Section 1) ─── */
+    #hero {
+      min-height: 100vh;
+      background: var(--navy-deep);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 5% 60px;
+      overflow: hidden;
+    }
+
+    /* Animated grid background */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(14,165,233,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14,165,233,0.07) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridPulse 8s ease-in-out infinite;
+    }
+    @keyframes gridPulse {
+      0%,100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Glowing orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      animation: orbFloat 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .orb-1 { width: 500px; height: 500px; background: #0EA5E9; top: -100px; left: -100px; animation-delay: 0s; }
+    .orb-2 { width: 400px; height: 400px; background: #00D4FF; bottom: -80px; right: -80px; animation-delay: -4s; }
+    .orb-3 { width: 300px; height: 300px; background: #38BDF8; top: 50%; left: 50%; transform: translate(-50%,-50%); animation-delay: -2s; }
+    @keyframes orbFloat {
+      0%,100% { transform: translate(0,0); }
+      33% { transform: translate(20px,-20px); }
+      66% { transform: translate(-15px,15px); }
+    }
+    .orb-3 {
+      animation: orbFloat3 10s ease-in-out infinite;
+      animation-delay: -2s;
+    }
+    @keyframes orbFloat3 {
+      0%,100% { transform: translate(-50%,-50%) scale(1); }
+      50% { transform: translate(-50%,-50%) scale(1.2); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.3);
+      color: var(--blue-light);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      animation: fadeInDown 0.8s ease 0.2s both;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(1.5); } }
+
+    .hero-company {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1.05;
+      letter-spacing: 2px;
+      animation: fadeInDown 0.9s ease 0.4s both;
+      text-shadow: 0 0 60px rgba(0,212,255,0.3);
+    }
+    .hero-company .highlight {
+      background: linear-gradient(135deg, #0EA5E9, #00D4FF, #38BDF8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--blue-light);
+      margin: 18px 0 28px;
+      font-style: italic;
+      letter-spacing: 2px;
+      font-weight: 300;
+      animation: fadeInDown 1s ease 0.6s both;
+    }
+
+    .hero-hook {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+      line-height: 1.5;
+      max-width: 720px;
+      margin: 0 auto 44px;
+      animation: fadeInDown 1s ease 0.8s both;
+    }
+    .hero-hook em { color: var(--accent); font-style: normal; }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease 1s both;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0EA5E9, #0284C7);
+      color: white;
+      border: none;
+      padding: 15px 36px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(14,165,233,0.4);
+      letter-spacing: 0.3px;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(14,165,233,0.55); }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1.5px solid rgba(14,165,233,0.5);
+      padding: 15px 36px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--blue-sky); background: rgba(14,165,233,0.08); transform: translateY(-3px); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(14,165,233,0.6), transparent);
+    }
+    @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+    @keyframes fadeInDown { from { opacity:0; transform:translateY(-25px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(25px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ─── SECTION SHARED STYLES ─── */
+    section { position: relative; overflow: hidden; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-sky);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-divider {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, #0EA5E9, #00D4FF);
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .section-divider.center { margin: 0 auto 20px; }
+
+    /* ─── SECTION 2: WHO WE ARE ─── */
+    #about {
+      padding: 100px 5%;
+      background: var(--blue-pale);
+      position: relative;
+    }
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230EA5E9' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .about-points { display: flex; flex-direction: column; gap: 20px; }
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 20px;
+      background: white;
+      border-radius: 12px;
+      border-left: 3px solid var(--blue-sky);
+      box-shadow: 0 2px 15px rgba(14,165,233,0.08);
+      transition: all 0.3s;
+    }
+    .about-point:hover { transform: translateX(6px); box-shadow: 0 4px 25px rgba(14,165,233,0.15); }
+    .point-icon {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, #0EA5E9, #38BDF8);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: white;
+      font-size: 16px;
+    }
+    .point-text h4 { font-size: 14px; font-weight: 600; color: var(--navy-deep); margin-bottom: 4px; }
+    .point-text p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    .about-image {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #0A1628 0%, #1E3A5F 40%, #0EA5E9 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(14,165,233,0.2);
+    }
+    .about-img-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 1px;
+      border-radius: 19px;
+      background: linear-gradient(135deg, #0e1f3a, #1a3a6e);
+    }
+    .about-img-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px;
+    }
+    .about-img-inner .big-icon {
+      font-size: 80px;
+      display: block;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 20px rgba(0,212,255,0.5));
+    }
+    .about-img-inner p {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .about-img-badge {
+      position: absolute;
+      bottom: 25px;
+      right: -15px;
+      background: white;
+      border-radius: 12px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      text-align: center;
+      z-index: 5;
+    }
+    .about-img-badge .num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--blue-sky);
+    }
+    .about-img-badge .lbl { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+    /* ─── SECTION 3: COURSES ─── */
+    #courses {
+      padding: 100px 5%;
+      background: var(--navy-deep);
+      position: relative;
+    }
+    #courses::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(14,165,233,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(0,212,255,0.06) 0%, transparent 50%);
+    }
+    .courses-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+    .courses-header .section-title { color: white; }
+
+    .courses-table {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .course-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(14,165,233,0.2);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, #0EA5E9, #00D4FF);
+    }
+    .course-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(14,165,233,0.5);
+      background: rgba(14,165,233,0.08);
+      box-shadow: 0 20px 50px rgba(14,165,233,0.2);
+    }
+    .course-icon {
+      width: 60px; height: 60px;
+      background: linear-gradient(135deg, rgba(14,165,233,0.2), rgba(0,212,255,0.1));
+      border: 1px solid rgba(14,165,233,0.3);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .course-badge {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--blue-light);
+      margin-bottom: 8px;
+    }
+    .course-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .course-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; }
+    .course-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-sm-outline {
+      padding: 9px 18px;
+      border: 1.5px solid rgba(14,165,233,0.4);
+      color: var(--blue-light);
+      background: transparent;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-sm-outline:hover { border-color: var(--blue-sky); background: rgba(14,165,233,0.1); }
+    .btn-sm-solid {
+      padding: 9px 18px;
+      background: linear-gradient(135deg, #0EA5E9, #0284C7);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-sm-solid:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(14,165,233,0.4); }
+
+    .see-all-wrap {
+      text-align: center;
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── SECTION 4: SERVICES ─── */
+    #services {
+      padding: 100px 5%;
+      background: white;
+      position: relative;
+    }
+    #services::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(14,165,233,0.03));
+      pointer-events: none;
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .services-header .section-title { color: var(--navy-deep); }
+
+    .services-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      border: 1px solid rgba(14,165,233,0.15);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+      background: white;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(14,165,233,0.04), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover { box-shadow: 0 15px 45px rgba(14,165,233,0.15); transform: translateY(-6px); }
+    .service-card:hover::after { opacity: 1; }
+
+    .service-icon {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, #0EA5E9, #38BDF8);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 20px rgba(14,165,233,0.3);
+    }
+    .service-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 12px;
+    }
+    .service-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 26px; }
+    .service-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-sm-dark {
+      padding: 9px 18px;
+      border: 1.5px solid rgba(10,22,40,0.2);
+      color: var(--navy-deep);
+      background: transparent;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-sm-dark:hover { border-color: var(--blue-sky); color: var(--blue-sky); }
+
+    /* ─── SECTION 5: WHY CHOOSE US ─── */
+    #why {
+      padding: 100px 5%;
+      background: var(--blue-ice);
+      position: relative;
+    }
+    #why::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L50 50 L100 0' stroke='%230EA5E9' stroke-width='0.3' fill='none' opacity='0.15'/%3E%3C/svg%3E") repeat;
+    }
+    .why-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .why-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .why-header .section-title { color: var(--navy-deep); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .why-item {
+      background: white;
+      border-radius: 14px;
+      padding: 24px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 2px 15px rgba(14,165,233,0.07);
+      transition: all 0.3s;
+      border: 1px solid rgba(14,165,233,0.1);
+    }
+    .why-item:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(14,165,233,0.15); }
+    .why-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue-sky);
+      background: rgba(14,165,233,0.1);
+      border-radius: 8px;
+      width: 38px; height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .why-content h4 { font-size: 15px; font-weight: 600; color: var(--navy-deep); margin-bottom: 6px; }
+    .why-content p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── SECTION 6: STATS ─── */
+    #stats {
+      padding: 80px 5%;
+      background: var(--navy-deep);
+      position: relative;
+      overflow: hidden;
+    }
+    #stats::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        rgba(14,165,233,0.1) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(14,165,233,0.1) 100%);
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 40px 20px;
+      border: 1px solid rgba(14,165,233,0.2);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-box::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, #0EA5E9, transparent);
+    }
+    .stat-box:hover { transform: translateY(-6px); border-color: rgba(14,165,233,0.4); }
+    .stat-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #0EA5E9, #00D4FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .stat-label { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 400; letter-spacing: 0.5px; }
+
+    /* ─── SECTION 7: REVIEWS ─── */
+    #reviews {
+      padding: 100px 5%;
+      background: var(--blue-pale);
+      position: relative;
+    }
+    #reviews::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 60%;
+      background: linear-gradient(to top, white, transparent);
+      pointer-events: none;
+    }
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .reviews-header .section-title { color: var(--navy-deep); }
+
+    .reviews-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .review-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 25px rgba(14,165,233,0.1);
+      border: 1px solid rgba(14,165,233,0.1);
+      transition: all 0.3s;
+      position: relative;
+    }
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 70px;
+      color: rgba(14,165,233,0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .review-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(14,165,233,0.18); }
+    .review-stars {
+      color: #F59E0B;
+      font-size: 16px;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+    .review-text { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 22px; }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .reviewer-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0EA5E9, #1E3A5F);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .reviewer-info h5 { font-size: 14px; font-weight: 600; color: var(--navy-deep); }
+    .reviewer-info span { font-size: 12px; color: var(--text-muted); }
+
+    /* ─── SECTION 8: FOOTER ─── */
+    footer {
+      background: var(--navy-deep);
+      padding: 80px 5% 30px;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 5%; right: 5%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(14,165,233,0.4), transparent);
+    }
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      margin-top: 16px;
+      max-width: 300px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .social-icon {
+      width: 38px; height: 38px;
+      border: 1px solid rgba(14,165,233,0.3);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .social-icon:hover { background: rgba(14,165,233,0.15); border-color: var(--blue-sky); color: var(--blue-sky); transform: translateY(-3px); }
+
+    .footer-col h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col li a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-col li a:hover { color: var(--blue-light); }
+    .footer-col li a::before { content: '›'; color: var(--blue-sky); font-size: 16px; }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .contact-icon { color: var(--blue-sky); font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.35); }
+    .footer-bottom a { color: var(--blue-light); text-decoration: none; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-image { order: -1; }
+      .courses-table { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .footer-brand { grid-column: 1/-1; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; flex-direction: column; position: fixed; top: 70px; left: 0; right: 0; background: rgba(10,22,40,0.98); padding: 20px; gap: 8px; }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── FLOATING PARTICLES ─── */
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: particleFloat linear infinite;
+      opacity: 0;
+    }
+    @keyframes particleFloat {
+      0% { transform: translateY(100%); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    /* Counter animation */
+    .count-up { display: inline-block; }
+
+    /* Smooth link transitions */
+    a { transition: all 0.3s; }
+
+    /* Active section indicator */
+    .nav-links a.active { color: var(--accent) !important; }
+  </style>
 </head>
-<body class="gradient-bg text-white relative">
+<body>
 
-    <canvas class="hearts-canvas" id="heartsCanvas"></canvas>
+<!-- ══════════════════════════════════════ -->
+<!--  NAVIGATION                           -->
+<!-- ══════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <div class="logo-icon">NI</div>
+    <div class="logo-text">Next<span>Inova</span></div>
+  </a>
 
-    <!-- Loading Screen -->
-    <div id="loadingScreen" class="fixed inset-0 bg-black flex items-center justify-center z-50">
-        <div class="text-center px-4">
-            <div class="w-20 h-20 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto mb-8"></div>
-            <h1 class="text-3xl md:text-4xl luxury-glow font-light tracking-wider">Loading Romance...</h1>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="course.html">Courses</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#footer" class="nav-cta">Contact</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ══════════════════════════════════════ -->
+<!--  SECTION 1 – HERO                     -->
+<!-- ══════════════════════════════════════ -->
+<section id="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge"> Technology · Education · Innovation</div>
+
+    <h1 class="hero-company">
+      <span class="highlight">NextInova</span><br>SOLUTIONS
+    </h1>
+
+    <p class="hero-tagline">✦ Innovating the Future, Solving Today ✦</p>
+
+    <p class="hero-hook">
+      We build <em>next-generation skills</em> and <em>digital solutions</em><br>
+      that transform students into professionals<br>and ideas into impactful realities.
+    </p>
+
+    <div class="hero-actions">
+      <a href="course.html" class="btn-primary"> Explore Courses</a>
+      <a href="services.html" class="btn-outline"> Our Services</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════ -->
+<!--  SECTION 2 – WHO WE ARE               -->
+<!-- ══════════════════════════════════════ -->
+<section id="about">
+  <div class="about-inner">
+
+    <div class="about-points reveal-left">
+      <div>
+        <span class="section-label">Our Identity</span>
+        <h2 class="section-title" style="color:var(--navy-deep)">Who We Are</h2>
+        <div class="section-divider"></div>
+        <p style="color:var(--text-muted);font-size:14px;line-height:1.8;margin-bottom:30px;">
+          NextInova Solutions is a forward-thinking technology and education company committed to empowering individuals and businesses with practical skills and innovative digital solutions.
+        </p>
+      </div>
+
+      <div class="about-point">
+        <div class="point-icon">💡</div>
+        <div class="point-text">
+          <h4>Innovation-First Mindset</h4>
+          <p>We lead with cutting-edge methodologies and next-gen tools to keep our students and clients ahead of the curve.</p>
         </div>
+      </div>
+
+      <div class="about-point">
+        <div class="point-icon">🎯</div>
+        <div class="point-text">
+          <h4>Outcome-Driven Learning</h4>
+          <p>Every course is designed around real-world results — from freelancing income to professional career growth.</p>
+        </div>
+      </div>
+
+      <div class="about-point">
+        <div class="point-icon">🌐</div>
+        <div class="point-text">
+          <h4>Full-Spectrum Digital Services</h4>
+          <p>From social media management to web development, we offer end-to-end digital solutions for businesses of all sizes.</p>
+        </div>
+      </div>
+
+      <div class="about-point">
+        <div class="point-icon">🤝</div>
+        <div class="point-text">
+          <h4>Community & Mentorship</h4>
+          <p>We build long-term relationships with students through mentorship programs, internships, and career guidance.</p>
+        </div>
+      </div>
+
+      <div class="about-point">
+        <div class="point-icon">🏆</div>
+        <div class="point-text">
+          <h4>Proven Track Record</h4>
+          <p>With 100+ trained students, 215+ completed projects, and 3+ years of excellence, our results speak for themselves.</p>
+        </div>
+      </div>
     </div>
 
-    <div id="formStatus" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-full text-sm z-50 hidden shadow-xl"></div>
-
-    <!-- Step 1: Name Entry -->
-    <div id="nameScreen" class="fixed inset-0 flex items-center justify-center z-20 px-4 py-12">
-        <div class="glass-card p-8 md:p-12 rounded-3xl max-w-md w-full text-center">
-            <h1 class="text-hero-mobile md:text-5xl font-light mb-6 luxury-glow leading-tight" id="typingText"></h1>
-            <div class="space-y-6">
-                <input type="text" id="nameInput" placeholder="Enter your beautiful name..." 
-                       class="w-full px-6 py-5 bg-white/10 backdrop-blur-xl rounded-2xl text-lg text-center border-2 border-white/20 focus:border-pink-400 focus:outline-none">
-                <button id="continueBtn" class="w-full btn-mobile bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl font-semibold hover:scale-105 transition-all duration-300 shadow-xl">
-                    Continue 💖
-                </button>
-            </div>
+    <div class="about-image reveal-right">
+      <div class="about-img-placeholder">
+        <div class="about-img-inner">
+          <span class="big-icon">🚀</span>
+          <p>Transforming Education<br>& Digital Services<br>for the Modern World</p>
         </div>
+      </div>
+      <div class="about-img-badge">
+        <span class="num">100+</span>
+        <div class="lbl">Students Trained</div>
+      </div>
     </div>
 
-    <!-- Step 2: Proposal Screen -->
-    <div id="proposalScreen" class="fixed inset-0 flex flex-col items-center justify-center z-10 px-4 py-12 hidden">
-        <div class="text-center mb-12 w-full max-w-4xl mx-auto">
-            <h1 class="text-hero-mobile md:text-5xl lg:text-7xl font-light mb-6 luxury-glow px-4">
-                <span class="name-placeholder"></span>,<br> I Love You ❤️
-            </h1>
-            <h2 class="text-sub-mobile md:text-3xl font-light luxury-glow opacity-80">Do You Love Me Too?</h2>
-        </div>
-        <div class="space-y-6 w-full max-w-2xl">
-            <button id="noBtn" class="no-btn w-full py-7 bg-gradient-to-r from-gray-600 to-gray-800 rounded-3xl btn-mobile font-semibold transition-all duration-300 shadow-xl">
-                🥺 NO
-            </button>
-            <button id="yesBtn" class="yes-btn w-full py-7 bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl btn-mobile font-semibold hover:scale-110 transition-all duration-500 shadow-2xl">
-                💖 YES
-            </button>
-        </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════ -->
+<!--  SECTION 3 – COURSES                  -->
+<!-- ══════════════════════════════════════ -->
+<section id="courses">
+  <div class="courses-header reveal">
+    <span class="section-label" style="color:var(--blue-light)">Learning Hub</span>
+    <h2 class="section-title">Courses We Offer</h2>
+    <div class="section-divider center"></div>
+    <p style="color:rgba(255,255,255,0.55);max-width:540px;margin:0 auto;font-size:15px;line-height:1.7">
+      Practical, industry-focused courses designed to launch your digital career and freelancing journey.
+    </p>
+  </div>
+
+  <div class="courses-table">
+
+    <div class="course-card reveal" style="transition-delay:0.1s">
+      <div class="course-icon">💻</div>
+      <div class="course-badge">Foundation Course</div>
+      <h3>Basic IT Course</h3>
+      <p>Master essential computer skills including MS Word, Excel, PowerPoint, and internet fundamentals — the perfect starting point for your digital journey.</p>
+      <div class="course-actions">
+        <a href="course.html#basic-it" class="btn-sm-outline"> See Details</a>
+        <a href="#" class="btn-sm-solid"> Enroll Now</a>
+      </div>
     </div>
 
-    <!-- Step 3: Celebration Screen -->
-    <div id="celebrateScreen" class="fixed inset-0 flex flex-col items-center justify-center z-30 px-4 py-12 hidden">
-        <div class="text-center">
-            <h1 class="text-5xl md:text-8xl font-light mb-8 luxury-glow">💖 YES! 💖</h1>
-            <p class="text-xl md:text-3xl font-light opacity-90">You made my heart explode! ❤️</p>
-        </div>
+    <div class="course-card reveal" style="transition-delay:0.2s">
+      <div class="course-icon">📱</div>
+      <div class="course-badge">Marketing Course</div>
+      <h3>Meta Ads Course</h3>
+      <p>Learn to create high-converting Facebook and Instagram ad campaigns, manage budgets, target audiences, and generate real revenue for any business.</p>
+      <div class="course-actions">
+        <a href="course.html#meta-ads" class="btn-sm-outline"> See Details</a>
+        <a href="#" class="btn-sm-solid"> Enroll Now</a>
+      </div>
     </div>
 
-    <!-- Step 4: Prank Reveal -->
-    <div id="prankScreen" class="fixed inset-0 flex flex-col items-center justify-center z-40 px-4 py-12 hidden overflow-y-auto">
-        <div class="text-center w-full max-w-4xl mx-auto">
-            <h1 class="text-6xl md:text-9xl font-bold mb-6 luxury-glow" style="background: linear-gradient(45deg, #FFD700, #FF6B9D, #4ECDC4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HAHA 😂❤️</h1>
-            
-            <div class="glass-card p-8 md:p-12 rounded-3xl w-full max-w-3xl mx-auto mb-10">
-                <h2 class="text-2xl md:text-4xl font-semibold mb-6 luxury-glow">Sorry... I Was Just Kidding 😭</h2>
-                <p class="text-lg md:text-2xl opacity-90 mb-8">You really thought this was a real proposal? 🤣💔</p>
-                <div class="border-t-2 border-yellow-400 pt-6">
-                    <h3 class="text-3xl md:text-4xl font-bold luxury-glow mb-4">You Have Been Officially Pranked 😎</h3>
-                </div>
-            </div>
-
-            <div class="glass-card p-8 rounded-3xl w-full max-w-2xl mx-auto mb-10">
-                <h3 class="text-2xl md:text-3xl font-semibold mb-6 luxury-glow">💭 Comment Please!</h3>
-                <textarea id="commentInput" rows="3" 
-                          class="w-full p-6 bg-white/10 backdrop-blur-xl rounded-2xl text-lg text-white border-2 border-white/20 focus:border-yellow-400 focus:outline-none resize-none"
-                          placeholder="How did the prank make you feel? 😂💔"></textarea>
-                <button id="submitCommentBtn" class="w-full mt-6 py-5 px-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl text-xl font-bold hover:scale-105 transition-all duration-300 shadow-xl">
-                    Submit & Share 😂
-                </button>
-            </div>
-        </div>
+    <div class="course-card reveal" style="transition-delay:0.3s">
+      <div class="course-icon">🌐</div>
+      <div class="course-badge">Tech Course</div>
+      <h3>Web Development Course</h3>
+      <p>Build fully responsive websites from scratch using HTML, CSS, JavaScript, and modern frameworks — and launch a lucrative freelancing career online.</p>
+      <div class="course-actions">
+        <a href="course.html#web-development" class="btn-sm-outline"> See Details</a>
+        <a href="#" class="btn-sm-solid"> Enroll Now</a>
+      </div>
     </div>
 
-    <script>
-        // 🔴 IMPORTANT: PASTE YOUR NEW DEPLOYMENT URL HERE
-        // After deploying Apps Script, copy the URL and paste it below
-        const FORM_URL = 'https://script.google.com/macros/s/AKfycbyiq0HCD_3fBxty3VsTa5jztwinGQaiWInYjLYSnufYFsm0Hi3hQdB3rsBgzQtj7E9hIQ/exec';
-        
-        let userName = '';
-        let noClickCount = 0;
-        let nameSubmitted = false;
-        let commentSubmitted = false;
+  </div>
 
-        function showStatus(message, isError = false) {
-            const statusEl = document.getElementById('formStatus');
-            statusEl.textContent = message;
-            statusEl.className = `fixed bottom-6 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-full text-sm z-50 shadow-xl ${isError ? 'bg-red-500' : 'bg-green-500'} text-white`;
-            statusEl.classList.remove('hidden');
-            setTimeout(() => statusEl.classList.add('hidden'), 3000);
-        }
+  <div class="see-all-wrap reveal">
+    <a href="course.html" class="btn-outline" style="border-color:rgba(14,165,233,0.5);color:var(--blue-light)">
+      📚 See All Courses →
+    </a>
+  </div>
+</section>
 
-        // SIMPLE WORKING SAVE FUNCTION
-        async function saveToGoogleSheets(data) {
-            try {
-                const response = await fetch(FORM_URL, {
-                    method: 'POST',
-                    mode: 'no-cors', // This works with the simplified Apps Script
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                console.log('Data sent to sheets:', data.type);
-                showStatus(`✅ ${data.type === 'NAME_ENTRY' ? 'Name saved!' : data.type === 'COMMENT' ? 'Comment saved!' : 'Saved!'}`);
-                return true;
-            } catch (error) {
-                console.error('Save error:', error);
-                showStatus('⚠️ Note: Data saved locally', true);
-                return false;
-            }
-        }
 
-        // Hearts animation
-        const canvas = document.getElementById('heartsCanvas');
-        const ctx = canvas.getContext('2d');
-        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-        
-        let hearts = [];
-        for(let i = 0; i < 15; i++) {
-            hearts.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: -Math.random() * 1 - 0.5,
-                size: Math.random() * 0.8 + 0.3,
-                life: Math.random() * 0.5 + 0.5
-            });
-        }
-        
-        function animateHearts() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            hearts.forEach(heart => {
-                ctx.globalAlpha = heart.life * 0.6;
-                ctx.font = `${heart.size * 25}px Arial`;
-                ctx.fillText('💖', heart.x, heart.y);
-                heart.x += heart.vx;
-                heart.y += heart.vy;
-                heart.life -= 0.002;
-                if(heart.life <= 0 || heart.y < -50) {
-                    heart.x = Math.random() * canvas.width;
-                    heart.y = canvas.height + 20;
-                    heart.life = 1;
-                }
-            });
-            requestAnimationFrame(animateHearts);
-        }
-        animateHearts();
+<!-- ══════════════════════════════════════ -->
+<!--  SECTION 4 – SERVICES                 -->
+<!-- ══════════════════════════════════════ -->
+<section id="services">
+  <div class="services-header reveal">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-title">Services We Offer</h2>
+    <div class="section-divider center"></div>
+    <p style="color:var(--text-muted);max-width:540px;margin:0 auto;font-size:15px;line-height:1.7">
+      Comprehensive digital services crafted to grow your brand, build your online presence, and scale your business.
+    </p>
+  </div>
 
-        // Loading
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                gsap.to('#loadingScreen', { opacity: 0, duration: 0.8, onComplete: () => {
-                    document.getElementById('loadingScreen').style.display = 'none';
-                }});
-            }, 1000);
-        });
+  <div class="services-grid" style="max-width:1100px;margin:0 auto">
 
-        // Typing
-        function typeWriter(text, element, speed = 80) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-        typeWriter("Enter Your Beautiful Name ❤️", document.getElementById('typingText'), 70);
+    <div class="service-card reveal" style="transition-delay:0.1s">
+      <div class="service-icon">📲</div>
+      <h3>Social Media Management</h3>
+      <p>We create, schedule, and manage engaging content across all platforms to grow your audience, boost brand visibility, and drive consistent engagement.</p>
+      <div class="service-actions">
+        <a href="#" class="btn-sm-dark"> Portfolio</a>
+        <a href="#" class="btn-sm-solid"> Get Service</a>
+      </div>
+    </div>
 
-        // Name screen
-        const nameInput = document.getElementById('nameInput');
-        const continueBtn = document.getElementById('continueBtn');
-        
-        continueBtn.addEventListener('click', async () => {
-            userName = nameInput.value.trim() || 'Beautiful Soul';
-            
-            if (!nameSubmitted) {
-                await saveToGoogleSheets({
-                    name: userName,
-                    timestamp: new Date().toISOString(),
-                    type: 'NAME_ENTRY',
-                    noClicks: 0
-                });
-                nameSubmitted = true;
-            }
-            
-            gsap.to('#nameScreen', { opacity: 0, scale: 0.8, duration: 0.8, onComplete: () => {
-                document.getElementById('nameScreen').style.display = 'none';
-                document.getElementById('proposalScreen').classList.remove('hidden');
-                document.querySelector('.name-placeholder').textContent = userName;
-                gsap.from('#proposalScreen', { opacity: 0, scale: 0.9, duration: 1 });
-            }});
-        });
-        
-        nameInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') continueBtn.click(); });
+    <div class="service-card reveal" style="transition-delay:0.2s">
+      <div class="service-icon">🖥️</div>
+      <h3>Web Development</h3>
+      <p>We design and develop fast, responsive, and SEO-optimized websites that deliver exceptional user experience and drive measurable business growth.</p>
+      <div class="service-actions">
+        <a href="#" class="btn-sm-dark"> Portfolio</a>
+        <a href="#" class="btn-sm-solid"> Get Service</a>
+      </div>
+    </div>
 
-        // Proposal logic
-        const noBtn = document.getElementById('noBtn');
-        const yesBtn = document.getElementById('yesBtn');
-        
-        noBtn.addEventListener('click', async (e) => {
-            noClickCount++;
-            
-            await saveToGoogleSheets({
-                name: userName,
-                timestamp: new Date().toISOString(),
-                type: 'NO_CLICK',
-                noClicks: noClickCount
-            });
-            
-            const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-            const maxY = window.innerHeight - noBtn.offsetHeight - 20;
-            const newX = Math.random() * maxX;
-            const newY = Math.random() * maxY;
-            
-            gsap.to(noBtn, { x: newX, y: newY, duration: 0.5, rotation: Math.random() * 360 - 180 });
-            gsap.to(yesBtn, { scale: 1 + Math.min(noClickCount * 0.05, 0.3), duration: 0.2, yoyo: true, repeat: 1 });
-        });
-        
-        yesBtn.addEventListener('click', async () => {
-            await saveToGoogleSheets({
-                name: userName,
-                timestamp: new Date().toISOString(),
-                type: 'PROPOSAL_ACCEPTED',
-                noClicks: noClickCount
-            });
-            
-            document.getElementById('proposalScreen').style.display = 'none';
-            document.getElementById('celebrateScreen').classList.remove('hidden');
-            gsap.from('#celebrateScreen', { opacity: 0, scale: 0.5, duration: 1 });
-            
-            setTimeout(() => {
-                document.getElementById('celebrateScreen').style.display = 'none';
-                document.getElementById('prankScreen').classList.remove('hidden');
-                gsap.from('#prankScreen', { opacity: 0, scale: 0.8, duration: 1 });
-            }, 2500);
-        });
-        
-        // Comment submission
-        const commentInput = document.getElementById('commentInput');
-        const submitCommentBtn = document.getElementById('submitCommentBtn');
-        
-        submitCommentBtn.addEventListener('click', async () => {
-            const comment = commentInput.value.trim();
-            if (!comment) {
-                commentInput.classList.add('ring-4', 'ring-yellow-400');
-                setTimeout(() => commentInput.classList.remove('ring-4', 'ring-yellow-400'), 1000);
-                return;
-            }
-            
-            if (commentSubmitted) return;
-            
-            await saveToGoogleSheets({
-                name: userName,
-                comment: comment,
-                noClicks: noClickCount,
-                timestamp: new Date().toISOString(),
-                type: 'COMMENT'
-            });
-            
-            commentSubmitted = true;
-            submitCommentBtn.innerHTML = '✅ Submitted! Thanks 😂';
-            submitCommentBtn.disabled = true;
-            commentInput.disabled = true;
-        });
-        
-        console.log('✅ Website ready! Make sure to update FORM_URL with your deployed Apps Script URL');
-        console.log('📍 Current FORM_URL:', FORM_URL);
-    </script>
+    <div class="service-card reveal" style="transition-delay:0.3s">
+      <div class="service-icon">🌍</div>
+      <h3>Remote Work Service</h3>
+      <p>We provide skilled remote professionals for your digital tasks — from content creation to technical support — flexible, reliable, and cost-effective.</p>
+      <div class="service-actions">
+        <a href="#" class="btn-sm-dark"> Portfolio</a>
+        <a href="#" class="btn-sm-solid"> Get Service</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="see-all-wrap reveal" style="margin-top:50px">
+    <a href="#" class="btn-primary">🔍 See All Services →</a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════ -->
+<!--  SECTION 5 – WHY CHOOSE US            -->
+<!-- ══════════════════════════════════════ -->
+<section id="why">
+  <div class="why-inner">
+    <div class="why-header reveal">
+      <span class="section-label">Our Edge</span>
+      <h2 class="section-title">Why Choose Us?</h2>
+      <div class="section-divider center"></div>
+      <p style="color:var(--text-muted);max-width:520px;margin:0 auto;font-size:15px">
+        Here's what sets NEXTINOVA SOLUTIONS apart from the rest.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item reveal" style="transition-delay:0.05s">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <h4>Expert-Led Training</h4>
+          <p>Our instructors bring real industry experience into every session, ensuring you learn what actually works in the field.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.1s">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <h4>Hands-On Practice</h4>
+          <p>No boring theory-only lectures — every module includes live projects, assignments, and practical exercises.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.15s">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <h4>Free Study Materials</h4>
+          <p>Get comprehensive notes, video resources, and reference guides completely free with every enrolled course.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.2s">
+        <div class="why-num">04</div>
+        <div class="why-content">
+          <h4>Internship Opportunities</h4>
+          <p>Top students get real internship placements and live project experience to build a strong professional portfolio.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.25s">
+        <div class="why-num">05</div>
+        <div class="why-content">
+          <h4>Career Mentorship</h4>
+          <p>One-on-one career guidance from mentors who help you land your first client, job, or freelance project.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.3s">
+        <div class="why-num">06</div>
+        <div class="why-content">
+          <h4>Affordable Fees</h4>
+          <p>World-class education at Pakistani-friendly prices — because quality skills should be accessible to everyone.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.35s">
+        <div class="why-num">07</div>
+        <div class="why-content">
+          <h4>Flexible Schedules</h4>
+          <p>Morning and evening batches available to suit students, working professionals, and busy entrepreneurs.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.4s">
+        <div class="why-num">08</div>
+        <div class="why-content">
+          <h4>Certified & Recognized</h4>
+          <p>Earn industry-recognized certificates upon completion that strengthen your CV and LinkedIn profile.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.45s">
+        <div class="why-num">09</div>
+        <div class="why-content">
+          <h4>Community Support</h4>
+          <p>Join our active student community for peer learning, job leads, collaboration opportunities, and ongoing support.</p>
+        </div>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.5s">
+        <div class="why-num">10</div>
+        <div class="why-content">
+          <h4>Proven Success Stories</h4>
+          <p>Our graduates are earning online, landing jobs, and growing businesses — their success is our best evidence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════ -->
+<!--  SECTION 6 – STATS                    -->
+<!-- ══════════════════════════════════════ -->
+<section id="stats">
+  <div class="stats-inner">
+    <div class="stat-box reveal" style="transition-delay:0.1s">
+      <span class="stat-num"><span class="count-up" data-target="100">0</span>+</span>
+      <div class="stat-label">Students Trained</div>
+    </div>
+    <div class="stat-box reveal" style="transition-delay:0.2s">
+      <span class="stat-num"><span class="count-up" data-target="215">0</span>+</span>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-box reveal" style="transition-delay:0.3s">
+      <span class="stat-num"><span class="count-up" data-target="3">0</span>+</span>
+      <div class="stat-label">Years of Experience</div>
+    </div>
+    <div class="stat-box reveal" style="transition-delay:0.4s">
+      <span class="stat-num"><span class="count-up" data-target="10">0</span>+</span>
+      <div class="stat-label">Companies Working With Us</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════ -->
+<!--  SECTION 7 – REVIEWS                  -->
+<!-- ══════════════════════════════════════ -->
+<section id="reviews">
+  <div class="reviews-header reveal">
+    <span class="section-label">Testimonials</span>
+    <h2 class="section-title" style="color:var(--navy-deep)">What Our Students Say</h2>
+    <div class="section-divider center"></div>
+    <p style="color:var(--text-muted);max-width:500px;margin:0 auto;font-size:15px">
+      Real stories from real students who transformed their careers with NEXTINOVA.
+    </p>
+  </div>
+
+  <div class="reviews-grid">
+
+    <div class="review-card reveal" style="transition-delay:0.1s">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">The Meta Ads course at NEXTINOVA completely changed my freelancing game. Within 2 months of completing the course, I was earning PKR 80,000/month from digital marketing clients. The practical approach is unmatched!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">MA</div>
+        <div class="reviewer-info">
+          <h5>Mubashir Ahmad</h5>
+          <span>Digital Marketing Freelancer, Lahore</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal" style="transition-delay:0.2s">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">I enrolled in the Web Development course with zero coding experience. The teachers are incredibly patient and the curriculum is structured perfectly. I landed my first web project even before finishing the course!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">SR</div>
+        <div class="reviewer-info">
+          <h5>Sana Rehman</h5>
+          <span>Junior Web Developer, Lahore</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal" style="transition-delay:0.3s">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">NEXTINOVA's social media management service transformed our brand presence. Our page grew from 500 to 15,000 followers in just 4 months and our sales doubled. Highly recommended for any business!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">JM</div>
+        <div class="reviewer-info">
+          <h5>John Michkal</h5>
+          <span>Business Owner</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal" style="transition-delay:0.1s">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">The Basic IT Course gave me the confidence to apply for office jobs. The free notes and hands-on practice made everything easy to understand. NEXTINOVA is the best institute in Lahore for beginners!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">FA</div>
+        <div class="reviewer-info">
+          <h5>Fatima Arif</h5>
+          <span>Office Administrator, Lahore</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal" style="transition-delay:0.2s">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">The mentorship at NEXTINOVA is exceptional. They didn't just teach skills — they guided me through building my entire freelancing profile and helped me get my first international client on Fiverr. Life-changing!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">ZH</div>
+        <div class="reviewer-info">
+          <h5>Zain Hussain</h5>
+          <span>Fiverr Freelancer, Karachi</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal" style="transition-delay:0.3s">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">NEXTINOVA built our company website and it's stunning — fast, SEO-optimized, and mobile-friendly. The team was professional, communicated clearly, and delivered ahead of schedule. Will definitely work with them again!</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">NB</div>
+        <div class="reviewer-info">
+          <h5>Natalia Burnur</h5>
+          <span>CEO, Creative Studio </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════ -->
+<!--  SECTION 8 – FOOTER                   -->
+<!-- ══════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-top">
+
+    <div class="footer-brand reveal-left">
+      <a href="#hero" class="nav-logo" style="display:inline-flex;margin-bottom:4px">
+        <div class="logo-icon">NI</div>
+        <div class="logo-text" style="font-size:17px">NEXT<span>INOVA</span><br><span style="font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:3px;font-weight:400">SOLUTIONS</span></div>
+      </a>
+      <p>Innovating the future, solving today. Empowering students and businesses across Pakistan with world-class digital education and services.</p>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="Facebook">f</a>
+        <a href="#" class="social-icon" aria-label="Instagram">in</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">li</a>
+        <a href="#" class="social-icon" aria-label="YouTube">▶</a>
+        <a href="#" class="social-icon" aria-label="WhatsApp">w</a>
+      </div>
+    </div>
+
+    <div class="footer-col reveal">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#courses">Our Courses</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col reveal" style="transition-delay:0.1s">
+      <h4>Courses</h4>
+      <ul>
+        <li><a href="#">Basic IT Course</a></li>
+        <li><a href="#">Meta Ads Course</a></li>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Freelancing</a></li>
+        <li><a href="#">Digital Marketing</a></li>
+        <li><a href="#">Master in AI</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col reveal" style="transition-delay:0.2s">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item">
+        <span class="contact-icon">📍</span>
+        Multani Colony, Shalimar Bagh Road, Lahore, Pakistan
+      </div>
+      <div class="footer-contact-item">
+        <span class="contact-icon">📞</span>
+        +92 300 000 0000
+      </div>
+      <div class="footer-contact-item">
+        <span class="contact-icon">✉️</span>
+        info@nextinovasolutions.com
+      </div>
+      <div class="footer-contact-item">
+        <span class="contact-icon">🕐</span>
+        Mon – Sat: 9:00 AM – 8:00 PM
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 NEXTINOVA SOLUTIONS. All rights reserved.</p>
+    <p>Designed with ❤️ by <a href="#">NEXTINOVA</a> · <a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════ -->
+<!--  SCRIPTS                              -->
+<!-- ══════════════════════════════════════ -->
+<script>
+  // ── Hamburger ──────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ── Navbar scroll effect ────────────────
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // ── Active nav link ─────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // ── Scroll reveal ───────────────────────
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── Counter animation ───────────────────
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) { el.textContent = target; clearInterval(timer); }
+      else el.textContent = Math.floor(current);
+    }, 16);
+  }
+
+  const statsSection = document.getElementById('stats');
+  let counted = false;
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !counted) {
+        counted = true;
+        document.querySelectorAll('.count-up').forEach(animateCounter);
+      }
+    });
+  }, { threshold: 0.4 });
+  statsObserver.observe(statsSection);
+
+  // ── Floating particles ──────────────────
+  const particlesContainer = document.getElementById('particles');
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      width: ${Math.random() * 3 + 1}px;
+      height: ${Math.random() * 3 + 1}px;
+      animation-duration: ${Math.random() * 15 + 8}s;
+      animation-delay: ${Math.random() * -20}s;
+      opacity: 0;
+    `;
+    particlesContainer.appendChild(p);
+  }
+</script>
 </body>
 </html>
